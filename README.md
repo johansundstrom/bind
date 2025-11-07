@@ -1,18 +1,29 @@
-# dns-bind9
+# Setup bind9
 
-Setup bind9
+## Bakgrund
 
-Förutsättningar: samtliga instruktioner gäller linux, främst Ubuntu
+DNS-tjänster kan uppfylla minst 1 av tre olika scenarier.
+
+* Lokal DNS som upplöser namn till IP lokalt. Oftast används domännamnet ```home.local``` i dessa fall. T.ex. ```nas.home.local```.
+* DNS tjänst på Internet (på WAN) som pekar ut din personliga server (på LAN). I texten benämnd som ```domain.se```. Exempelvis ```ftp.domain.se```
+* Split Horizon (Split DNS) Båda ovanstående scenarier samtidigt
 
 ## Installera
 
+* Förutsättningar: samtliga instruktioner gäller linux, främst Ubuntu. 
+* Hårdvara: RPI (Debian), PC (Ubuntu Server)
+
 ```sudo apt install bind9```
 
-## Konfigurationer
+## Översikt - konfigurationer
 
 Alla konfigurationer ligger i...
 
 ```/etc/bind```
+
+Kopplingarna framgår av bilden. Pilen pekar mot referens
+
+
 
 ## named.conf
 
