@@ -38,6 +38,14 @@ Notera också att många personliga internettjänster bygger på dynamiska IP-ad
 
 *Accountname* och *APIKEY* finns under Allmänn information i kotrollpanelen hos *Simply.com*. 
 
+Sista steg är att göra *Port Forwarding* på din router. Detta är en WAN-inställning och betyder att respektive förfrågan från Internet vidarebefordras på rätt TCP-port. Om man söker ```www.domän.se``` så använder protokollet HTTP standardporten 80. Om en webbserver finns i det lokala nätverket på IP-adress 192.168.1.40 så ska alltså följande inställning göras på din router...
+
+| Service name | External Port | Internal Port | Internal IP Address | Protocoll | 
+| --- | --- | --- | --- | --- |
+| WEB | 80 | 80 | 192.168.1.40 | TCP |
+
+[Övriga TCP-portar enligt standard](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)
+
 ## Installera
 
 * Förutsättningar: samtliga instruktioner gäller linux, främst Ubuntu. 
