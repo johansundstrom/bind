@@ -32,11 +32,30 @@ På kontrollpanelen i *Simply.com* klicka ```Hantera DNS-inställningar för din
 
 Registrerade poster i DNS kan ta allt från 5-60 minuter att slå genom i hela världen, om du därför använder Google's DNS Servrar, ha tålamod.
 
-Notera också att många personliga internettjänster bygger på dynamiska IP-adresser. Din router's WAN-adress är oftast dynamiskt tilldelad och kan byta adress vid t.ex. varje strömavbrott på routern. Den enkla lösningen vid ny WAN-IP är att ersätta denna med den nya i kontrollpanelen, men den rekommenderade lösningen på detta är att låta en klient på ditt nätverk, t.ex en Linux enhet köra ett CRON-jobb var 15:e minut enligt följande...
+Notera också att många personliga internettjänster bygger på dynamiska IP-adresser. Din router's WAN-adress är oftast dynamiskt tilldelad och kan byta adress vid t.ex. varje strömavbrott på routern. Den enkla lösningen vid ny WAN-IP är att ersätta denna med den nya i kontrollpanelen, men den rekommenderade lösningen på detta är att låta en klient på ditt nätverk, t.ex en Linux enhet köra ett CRON-jobb var 15:e minut...
+
+```touch /path/to/ddns.sh```
+
+```sudo nano /path/to/ddns.sh```
+
+Addera följande till ddns.sh och spara
 
 ```curl -s -u "ACCOUNTNAME:APIKEY" "https://api.simply.com/2/ddns/?domain=example.com&hostname=home.example.com"```
 
-*Accountname* och *APIKEY* finns under Allmänn information i kotrollpanelen hos *Simply.com*. 
+*Accountname* och *APIKEY* finns under Allmänn information i kontrollpanelen hos *Simply.com*. 
+
+Sätt exekveringsrättigheter
+
+```sudo chmod +x /path/to/ddns.sh```
+
+Första gången crontab körs skapas en fil. Ubuntu 22.04 användare behöver välja texteditor. Välj ```nano```
+
+```crontab -e```
+
+Starta cronjob
+
+```*/15 * * * * /path/to/script.sh > /dev/null 2>&1```
+
 
 Sista steg är att göra *Port Forwarding* på din router. Detta är en WAN-inställning och betyder att respektive förfrågan från Internet vidarebefordras på rätt TCP-port. Om man söker ```www.domän.se``` så använder protokollet HTTP standardporten 80. Om en webbserver finns i det lokala nätverket på IP-adress 192.168.1.40 så ska alltså följande inställning göras på din router...
 
