@@ -100,7 +100,7 @@ include "/etc/bind/named.conf.default-zones";
 
 ## named.conf.options
 
-Allmänn konfigureringsfil som...
+Allmän konfigureringsfil som...
 
 * port att lyssna på
 * tillåtna uppslag
