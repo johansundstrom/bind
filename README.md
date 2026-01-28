@@ -113,28 +113,77 @@ Allmän konfigureringsfil som...
 Ett exempel
 
 ```bash
-acl internal-network {
+acl "internal-network" {
   192.168.1.0/24;
 };
 
 options {
     directory "/var/cache/bind";
-
-    recursion yes;
-    allow-query { any; };
-    allow-recursion { internal-network; localhost; };
-    allow-transfer { none; };
+    allow-recursion { internal-network; };
 
     forwarders {
         8.8.8.8; // Google DNS
         8.8.4.4;
     };
 
-
-    dnssec-validation auto;
-    listen-on { any; };
+    listen-on { 127.0.0.1; 192.168.50.181; };
     listen-on-v6 { any; };
 };
 ```
 
-2 
+## Zoner
+
+Zon-filerna läggs i separat mapp. Skapa mappen ```/etc/bind/zones```
+
+```bash
+sudo mkdir /etc/bind/zones
+```
+
+Skapa filen ```db.example.local``` Lägg minst in följande
+
+```bash
+$TTL    86400
+
+@       IN    SOA    ns1.example.local. admin.example.local. (
+       2026012802    ; Serial number (YYYYMMDDNN format) Increment this when making changes!
+             3600    ; Refresh - Secondary checks every 1 hour
+             1800    ; Retry - If refresh fails, retry in 30 min
+           604800    ; Expire - Zone data expires after 1 week
+            86400    ; Minimum TTL - Negative cache TTL (1 day)
+)
+@       IN      NS   ns1.example.local.
+ns1     IN      NS   192.168.0.181
+
+ssh      IN      A   192.168.0.20
+db       IN      A   192.168.0.30
+ldap     IN      A   192.168.0.40
+```
+
+Skapa filen ```db.192.168.0```, lägg den i ´´´zone```mappen
+
+```bash
+$TTL    86400
+
+@       IN    SOA    ns1.example.local. admin.example.local. (
+       2026012802    ; Serial number (YYYYMMDDNN format) Increment this when making changes!
+             3600    ; Refresh - Secondary checks every 1 hour
+             1800    ; Retry - If refresh fails, retry in 30 min
+           604800    ; Expire - Zone data expires after 1 week
+            86400    ; Minimum TTL - Negative cache TTL (1 day)
+)
+@       IN     NS    ns1.example.local.
+
+20      IN    PTR    ssh.example.local.
+30      IN    PTR    db.example.local.
+40      IN    PTR    ldap.example.local.
+```
+
+Ovanstående avslutar *split horizon*. Två zone-filer i en ny zone-mapp. Därigenom kan hela orginalinstallationen av BIND9 hållas helt intakt.
+
+När zone-filerna är redigerade behöver de läsas in på nytt. Två sätt att göra detta på...
+
+```sudo rndc reload example.local```
+
+eller 
+
+```sudo systemctl restart bind9```
