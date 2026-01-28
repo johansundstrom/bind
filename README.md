@@ -73,14 +73,14 @@ Sista steg är att göra *Port Forwarding* på din router. Detta är en WAN-inst
 
 ## 2. Lokal DNS
 
-## Installera BIND9 (de facto standard)
+### Installera BIND9 (de facto standard)
 
 * Förutsättningar: samtliga instruktioner gäller linux, främst Ubuntu. 
 * Hårdvara: RPI (Debian), PC (Ubuntu Server)
 
 ```sudo apt install bind9```
 
-## Översikt - konfigurationer
+### Översikt - konfigurationer
 
 Alla konfigurationer ligger i...
 
@@ -90,7 +90,7 @@ Kopplingarna framgår av bilden. Pilen pekar mot referens
 
 ![Alt text](bind9.png "Konfigurerbara filer i BIND")
 
-## named.conf
+### named.conf
 
 Detta är den primära konfigurationen för BIND. Behöver inte ändras.
 
@@ -100,7 +100,7 @@ include "/etc/bind/named.conf.local";
 include "/etc/bind/named.conf.default-zones";
 ```
 
-## named.conf.options
+### named.conf.options
 
 Allmän konfigureringsfil som...
 
@@ -131,7 +131,7 @@ options {
 };
 ```
 
-## Zoner
+### Zoner
 
 Zon-filerna läggs i separat mapp. Skapa mappen ```/etc/bind/zones```
 
@@ -159,7 +159,7 @@ db       IN      A   192.168.0.30
 ldap     IN      A   192.168.0.40
 ```
 
-Skapa filen ```db.192.168.0```, lägg den i ´´´zone```mappen
+Skapa filen ```db.192.168.0```, lägg den i ´´´zone```mappen. Detta är en ```reverse-lookup```-zone. Med den kan omvända namnuppslagningar göras IP ==> Name
 
 ```bash
 $TTL    86400
