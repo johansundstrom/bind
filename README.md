@@ -24,7 +24,7 @@ Sök därefter upp en fri tjänst på Internet som låter dig administrera DNS-p
 | ---- | --- | --- | --- |
 | aktuell domän | DNS-tjänst | - Aldrig - | 4 jun 2026 |
 
-Notera kolumn 3 och 4. Kolumn 3 beskriver tjänsten hos *Simply.com*. Kolumn 4 är *Utgångsdatum för domän* dvs förfallodatum hos Internetstiftelsen som är registrator för .se-adresser. Man kan registera domän och betala för 12-120 månader. Efter domaännamnet förfallit får den i 10 dagar status *Expired* och blir efter det tillgänglig för vem som helst. 
+Notera kolumn 3 och 4. Kolumn 3 beskriver tjänsten hos *Simply.com*. Kolumn 4 är *Utgångsdatum för domän* dvs förfallodatum hos Internetstiftelsen som är registrator för .se-adresser. Man kan registera domän och betala för 12-120 månader. Efter domännamnet förfallit får den i 10 dagar status *Expired* och blir efter det tillgänglig för vem som helst. 
 
 På kontrollpanelen i *Simply.com* klicka ```Hantera DNS-inställningar för din domän```. 
 
