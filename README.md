@@ -159,7 +159,7 @@ db       IN      A   192.168.0.30
 ldap     IN      A   192.168.0.40
 ```
 
-Skapa filen ```db.192.168.0```, lägg den i ´´´zone```mappen. Detta är en ```reverse-lookup```-zone. Med den kan omvända namnuppslagningar göras IP ==> Name
+Skapa filen ```db.192.168.0```, lägg den i ```zone```mappen. Detta är en ```reverse-lookup```-zone. Med den kan omvända namnuppslagningar göras IP ==> Name
 
 ```bash
 $TTL    86400
