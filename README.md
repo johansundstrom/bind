@@ -5,8 +5,8 @@
 DNS-tjänster kan uppfylla minst en av tre olika scenarier.
 
 1. **Internet DNS** eller DNS-tjänst på Internet (på WAN) som pekar ut din personliga server (på LAN). I texten benämnd som ```domain.se```. Exempelvis ```ftp.domain.se```.
-2. Lokal DNS som upplöser namn till IP lokalt. Oftast används domännamnet ```home.local```, exempelvis ```nas.home.local```.
-3. Split Horizon (eller *Split DNS*) Båda ovanstående scenarier samtidigt
+2. **Lokal DNS** som upplöser namn till IP lokalt. Oftast används domännamnet ```home.local```, exempelvis ```nas.home.local```.
+3. **Split Horizon** (eller *Split DNS*) Båda ovanstående scenarier samtidigt
 
 ## 1. Internet DNS
 
