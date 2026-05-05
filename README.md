@@ -107,7 +107,7 @@ Allmän konfigureringsfil som...
 * port att lyssna på
 * tillåtna uppslag
 * DNSSEC
-* cashe filväg
+* cache filväg
 * etc...
 
 Ett exempel
