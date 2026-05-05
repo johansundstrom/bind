@@ -16,7 +16,7 @@ Min approach är att registera en .se-adress. Den blir personlig och lätt att k
 
 [Återförsäljare för .se-adresser](https://internetstiftelsen.se/domaner/registrera-ett-domannamn/aterforsaljare/)
 
-Sök därefter upp en fri tjänst på Internet som låter dig administrera DNS-poster själv. Ett sådant är *simply.com*. Om man bara är ute efter att hantera DNS på Internet så är *Simply.com* gratis och låter för tillfället att göra detta på livstid, utan att ens registera ditt kontokort. Anvisningar följer därför för just *Simply.com*.
+Sök därefter upp en fri tjänst på Internet som låter dig administrera DNS-poster själv. En sådan är *simply.com*. Om man bara är ute efter att hantera DNS på Internet så är *Simply.com* gratis och är för tillfället gratis på livstid, utan att ens registera ditt kontokort. Anvisningar följer därför för just *Simply.com*.
 
 ![Alt text](simply-01.png "Produkter i Simply kontrollpanel")
 
