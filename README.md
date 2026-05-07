@@ -1,5 +1,7 @@
 # Setup bind9
 
+![Static Badge](https://img.shields.io/badge/Build_progression-75%25-orange?style=plastic)
+
 ## Bakgrund
 
 DNS-tjänster kan uppfylla minst en av tre olika scenarier.
