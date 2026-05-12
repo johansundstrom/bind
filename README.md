@@ -6,11 +6,11 @@
 
 DNS-tjänster kan uppfylla minst en av tre olika scenarier.
 
-1. **Internet DNS** eller DNS-tjänst på Internet (på WAN) som pekar ut din personliga server (på LAN). I texten benämnd som ```domain.se```. Exempelvis ```ftp.domain.se```.
-2. **Lokal DNS** som upplöser namn till IP lokalt. Oftast används domännamnet ```home.local```, exempelvis ```nas.home.local```.
+1. **Internet DNS** (extern DNS) eller DNS-tjänst på Internet (på WAN) som pekar ut din personliga server (på LAN). I texten benämnd som ```domain.se```. Exempelvis ```ftp.domain.se```.
+2. **Lokal DNS** (intern DNS) som upplöser namn till IP lokalt. Oftast används domännamnet ```home.local```, exempelvis ```nas.home.local```.
 3. **Split Horizon** (eller *Split DNS*) Båda ovanstående scenarier samtidigt
 
-## 1. Internet DNS
+## 1. Internet DNS (extern DNS)
 
 Denna tjänst ger möjlighet att från internet ange domänadresser som pekar till ett lokal nät. Det kan t.ex. vara att nå en webbserver, en FTP eller någon annan lokal service. För att detta ska fungera krävs att ha en domänadress. 
 
@@ -73,7 +73,7 @@ Sista steg är att göra *Port Forwarding* på din router. Detta är en WAN-inst
 
 [Övriga TCP-portar enligt standard](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)
 
-## 2. Lokal DNS
+## 2. Lokal DNS (intern DNS)
 
 ### Installera BIND9 (de facto standard)
 
