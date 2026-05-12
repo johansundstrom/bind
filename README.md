@@ -1,6 +1,6 @@
 # Setup bind9
 
-![Static Badge](https://img.shields.io/badge/Build_progression-75%25-orange?style=plastic)
+![Static Badge](https://img.shields.io/badge/Build_progression-67%25-orange?style=plastic)
 
 ## Bakgrund
 
